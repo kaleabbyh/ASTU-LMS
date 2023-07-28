@@ -9,8 +9,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactUs from "./pages/ContactUs";
 import Navbar from './components/AppBarResponsive';
 import Footer from "./components/Footer";
-import Navbar from './components/AppBarResponsive';
-import Footer from "./components/Footer";
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
