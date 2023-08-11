@@ -73,10 +73,9 @@ const ContactUs = ({ theme }) => {
                 autoComplete="false"
               />
               <TextareaAutosize
-                minRows={3}
-                maxRows = {6}
+                minRows={6}
+                maxRows = {10}
                 maxLength = {500}
-                fullWidth
                 label="message"
                 type={"text"}
                 placeholder="your message ..."

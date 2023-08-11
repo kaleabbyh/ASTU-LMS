@@ -70,7 +70,6 @@ export default function SchoolList() {
         </MenuItem>
         <Divider />
         <MenuItem>
-          {" "}
           <SchoolLink to={"/school"}>
             <Typography>
               School Applied Scence

@@ -1,8 +1,9 @@
 import { Book, Quiz, School } from "@mui/icons-material";
-import { Box, Button, Icon, Typography } from "@mui/material";
+import { Box, Icon, Typography } from "@mui/material";
 import { alpha } from "@mui/material/styles";
 import React from "react";
 import LogoBox from "../components/LogoBox";
+import { Link } from "react-router-dom";
 
 const AboutPage = () => {
   const items = [
@@ -67,17 +68,17 @@ const AboutPage = () => {
                 accusamus nisi est voluptatum distinctio consectetur
                 perspiciatis ipsa. Nostrum quod illum dolore? Astu learning
                 management is Lorem ipsum dolor sit amet...
-                <Button
-                  sx={{
-                    textDecoration: "underline",
-                    overflow: "hidden",
-                    textTransform:"lowercase",
-                    transition: "all .4s",
-                    "&:hover": { backgroundColor: "rgba(48,200,200,0.2)", transform: "Scale(1.25)" },
-                  }}
-                >
-                  learn more
-                </Button>
+                <Link to={"/about"}>
+                  <span
+                    style={{
+                      color:"#00695c",
+                      textDecoration: "underline",
+                      textTransform: "lowercase",
+                    }}
+                  >
+                    learn more
+                  </span>
+                </Link>
               </Typography>
             </Box>
           </Box>
@@ -92,7 +93,8 @@ const AboutPage = () => {
             display={{ md: "block", lg: "flex" }}
           >
             {items.map((item) => (
-              <Box key={item}
+              <Box
+                key={item}
                 mb={1}
                 py={2}
                 bgcolor={alpha("#000", 0.8)}
@@ -106,8 +108,8 @@ const AboutPage = () => {
                 <Typography
                   sx={{
                     backgroundColor: "transparent",
-                    fontSize: {sm:"16px",lg:"32px"},
-                    fontWeight:"700",
+                    fontSize: { sm: "16px", lg: "32px" },
+                    fontWeight: "700",
                     color: "#f7f7f7",
                     letterSpacing: { sm: "3px", md: "5px" },
                   }}
@@ -134,9 +136,7 @@ const AboutPage = () => {
       </Box>
 
       <Box className="box3">
-        <Box className="caption">
-          
-        </Box>
+        <Box className="caption"></Box>
       </Box>
     </Box>
   );

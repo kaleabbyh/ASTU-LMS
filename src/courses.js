@@ -55,6 +55,13 @@ const courses = [
         rating: 4.5,
         about: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
     },
+    {
+        id:9,
+        title : "Advanced Photoshop Tutorial",
+        logo: "/images/courses/photoshop.jpeg",
+        rating: 4.5,
+        about: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    },
 ];
 
 export default courses;

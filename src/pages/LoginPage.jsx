@@ -9,9 +9,11 @@ import {
   Paper,
   TextField,
   Typography,
+  Link
 } from "@mui/material";
+import { useState } from "react";
 
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const paperStyle = { padding: 20, width: 280, margin: "60px auto" };
@@ -23,6 +25,7 @@ const LoginPage = () => {
   let handleSubmit = () => {
     navigator("/");
   };
+  const [remember, setRemember]=useState(true);
   return (
     <Box textAlign={"center"}>
       <Paper elevation={10} style={paperStyle}>
@@ -48,7 +51,7 @@ const LoginPage = () => {
           required
         />
         <FormControlLabel
-          control={<Checkbox name="checkedB" color="primary" />}
+          control={<Checkbox onChange={()=>setRemember(!remember)} name="checkedB" checked={remember} color="primary" />}
           label="Remember me"
         />
         <Button
@@ -62,7 +65,7 @@ const LoginPage = () => {
           Sign In
         </Button>
         <Typography>
-          <Link to={"/login"}>Forgot password ?</Link>
+          <Link underline="none" href="/login">Forgot password ?</Link>
         </Typography>
       </Paper>
     </Box>

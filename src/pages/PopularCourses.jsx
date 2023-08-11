@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Button, Grid, Link } from "@mui/material";
 import Post from "../components/Post";
 import React from "react";
 import courses from "../courses";
@@ -23,32 +23,30 @@ const PopularCourses = () => {
           },
         }}
       >
-        {courses.map((course) => (
-          <Post key={course.id} course={course} />
-        ))}
+        {courses
+          .filter((course) => Number(course.id) < 5)
+          .map((course) => (
+            <Post key={course.id} course={course} />
+          ))}
       </Grid>
-      {/* <Pagination
-        sx={{ marginTop: { xs: 0, sm: -4 } }}
-        count={99}
-        variant="outlined"
-        color="primary"
-      /> */}
-      {/* <Button
-        color="info"
-        sx={{
-          marginTop: { xs: 0, sm: -4 },
-          transition: "all .4s",
-          "&:hover": {
-            transform: "ScaleX(1.25)",
-            borderRadius: 4,
-            border: "0.75px solid rgba(38,159,159,0.25)",
-          },
-        }}
-        size="large"
-        variant="text"
-      >
-        See More
-      </Button> */}
+
+        <Button
+          color="info"
+          sx={{
+            alignSelf:"flex-end",
+            margin:{xs:"-1rem 2rem 1rem 0",sm:"-3rem 10rem 2rem 0"},
+            transition: "all .4s",
+            "&:hover": {
+              transform: "ScaleX(1.25)",
+              borderRadius: 4,
+              border: "0.75px solid rgba(38,159,159,0.25)",
+            },
+          }}
+          size="large"
+          variant="text"
+        >
+          <Link underline="none" color="inherit" href="/courses">See More</Link>
+        </Button>
     </Box>
   );
 };
